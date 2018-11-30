@@ -1,0 +1,33 @@
+{
+  "appenders" : {
+      "dateFile" : {
+          "type" : "dateFile",
+          "filename" : "logs/express-exmple",
+          "alwaysIncludePattern" : true,
+          "pattern" : ".yyyy-MM-dd.log",
+          "compress" : true
+      },
+      "file" : {
+          "type" : "file",
+          "filename" : "/usr/local/nodejs/node_logs/node_app.log",
+          "encoding" : "utf-8"
+      },
+      "console" : {
+          "type" : "console"
+      }
+  },
+  "categories" : {
+      "default" : {
+          "appenders" : [ "dateFile" ],
+          "level" : "info"
+      },
+      "production" : {
+          "appenders" : [ "file" ],
+          "level" : "info"
+      },
+      "development" : {
+          "appenders" : [ "console", "dateFile" ],
+          "level" : "info" 
+      }
+  }
+}
